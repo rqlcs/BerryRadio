@@ -23,7 +23,7 @@ class Radio:
 		self.root.tk.call('wm', 'iconphoto', self.root._w, self.img_inframe)
 		self.frequency = frequency
 		self.music = music
-		self.location_fmtransmitter = "/opt/berryradio/py/git_markondej/fm_transmitter"
+		self.location_fmtransmitter = "/opt/berryradio/fm_transmitter"
 		self.PASS_SSH = password
 		self.USER_SSH = user
 		self.PORT = port
@@ -63,7 +63,7 @@ class Radio:
 		try:
 			print colored("[ * ] Generate FM Station...",'green')
 	   		sleep(0.5)
-	    		self.payload = "sox -t mp3 /opt/fm_webui/song/%s -t wav - | ./fm_transmitter -f %s -r -" %(self.music,self.frequency)
+	    		self.payload = "sox -t mp3 /opt/berryradio/msic/%s -t wav - | /opt/berryradio/fm_transmitter/fm_transmitter -f %s -r -" %(self.music,self.frequency)
 	    		shell("sshpass -p '%s' ssh  -p %s %s@%s 'cd %s && %s'"%(self.PASS_SSH,self.PORT,self.USER_SSH,self.IP_ADDR,self.location_fmtransmitter,self.payload))
 		except (socket.error,SSHException, AuthenticationException) as error_ssh:
 			print error_ssh
@@ -89,7 +89,7 @@ class Radio:
 def help_usage():
 	""" Guide d'utilisation """
 	help = """
-		Usage : Usage : ./radio.py <frequency> <music> <hostname> <user> <password> <port(default 22)>
+		Usage : berryradio <frequency> <music> <hostname> <user> <password> <port(default 22)>
 
 		<frequency> : [87.5MHz & 108.8MHz] : INT,FLOAT
 		<music> : MP3 extension, located in /raspr4dio/msic/
@@ -98,7 +98,7 @@ def help_usage():
 		<password> : SSH password
 		<port> : 22(default SSH)
 
-		Web Interface at : http://localhost/BerryRadio
+		Web Interface at : http://localhost/
 	"""
 	return help
 if __name__=="__main__":
@@ -112,12 +112,12 @@ if __name__=="__main__":
 			print "need to be between 87.5MHz and 108.8MHz"
 			sys.exit()
 
-		cnxion = "sshpass -p '%s' ssh -p 22 %s@%s 'ls ~/raspr4dio/msic'" %(sys.argv[5],sys.argv[4],sys.argv[3])
+		cnxion = "sshpass -p '%s' ssh -p 22 %s@%s 'ls /opt/berryradio/msic'" %(sys.argv[5],sys.argv[4],sys.argv[3])
 		proc = subprocess.Popen(cnxion, shell=True, stdout=subprocess.PIPE)
 		list_music = [musics for musics in proc.stdout]
 		list_music_strip = [list_music[y].replace('\n','') for y in range(len(list_music))]
        		if sys.argv[2] not in list_music_strip:
-                	print "%s not exist at /raspr4dio/msic/ !" %(sys.argv[2])
+                	print "%s not exist at /opt/berryradio/msic/ !" %(sys.argv[2])
                 	sys.exit()
 
 		Radio(float(sys.argv[1]), sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5], sys.argv[6])
