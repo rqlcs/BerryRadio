@@ -17,7 +17,7 @@
                             </tr>
                         </thead>
                         <tbody>
-				<?php foreach(array_slice(scandir("/home/pi/raspr4dio/msic/"),2) as $musiques): ?>
+				<?php foreach(array_slice(scandir("/opt/berryradio/msic/"),2) as $musiques): ?>
 			        <tr>
 				    <td><?php echo $musiques; ?></td>
 				    <td><INPUT type="radio" id="music_choice" name="music" value=<?php echo $musiques ?>> &#10004</td>
@@ -54,4 +54,4 @@
     </body>
 </html>
 
-<!-- Made By Lucas R.-->
+<!-- Made By RQLCS.-->
