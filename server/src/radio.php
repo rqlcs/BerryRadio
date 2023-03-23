@@ -40,8 +40,8 @@ exec($shell_cmd);
 			<div class="position_sn">
 				<table>
 					<tr>
-						<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/1200px-Twitter-logo.svg.png"</td>
-						<td><a href="https://www.buymeacoffee.com/rqlcs.io"><img src="assets/buymecoffee.png"</td></a>
+						<td><img src="assets/twitter.png"</td>
+						<td><a href="https://www.buymeacoffee.com/rqlcs.io"><img src="assets/buymeacoffee.png"</td></a>
 					</tr>
 				</table>
 			</div>
