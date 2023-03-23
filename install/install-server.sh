@@ -20,8 +20,7 @@ echo ""
 apt-get install apache2 -y
 mv server/* /var/www/html 
 chown -R www-data:www-data /var/www/html/
-mkdir /opt/berryradio
-mv server/ /opt/
+mkdir /opt/berryradio && mkdir /opt/berryradio/msic
 
 cd /opt/berryradio
 git clone https://github.com/markondej/fm_transmitter
