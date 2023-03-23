@@ -1,5 +1,5 @@
 #Python GUI for FM_TRANSMITTER PROJECT
-#Lucas R.
+#RQLCS.
 
 import os
 import subprocess
