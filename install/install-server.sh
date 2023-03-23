@@ -18,7 +18,7 @@ done
 echo ""
 
 apt-get install apache2 -y
-mv web_interface/* /var/www/html 
+mv server/* /var/www/html 
 chown -R www-data:www-data /var/www/html/
 mkdir /opt/berryradio
 mv server/ /opt/
