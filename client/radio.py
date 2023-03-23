@@ -23,7 +23,7 @@ class Radio:
 		self.root.tk.call('wm', 'iconphoto', self.root._w, self.img_inframe)
 		self.frequency = frequency
 		self.music = music
-		self.location_fmtransmitter = "~/raspr4dio/py/git_markondej/fm_transmitter"
+		self.location_fmtransmitter = "/opt/berryradio/py/git_markondej/fm_transmitter"
 		self.PASS_SSH = password
 		self.USER_SSH = user
 		self.PORT = port
@@ -42,7 +42,7 @@ class Radio:
        		self.configure = self.root.configure(background="grey")
        		self.label_title = Label(self.root,text="BerryR4dio",bg="#464646", fg='pink',font=("Times New Roman",20)).place(x=90,y=20)
        		self.liste = Listbox(self.root,bg="black",width="33",height="8")
-       		self.liste.insert(1,"                   -= RaspR4dio =-")
+       		self.liste.insert(1,"                   -= BerryR4dio =-")
        		self.liste.insert(2,"")
        		self.liste.insert(3, "# Frequency: %s MHz"%(float(sys.argv[1])))
        		self.liste.insert(4, "# Wave Type: FM")
