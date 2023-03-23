@@ -18,8 +18,8 @@ class Radio:
 	def __init__(self, frequency, music, hostname, user, password, port):
 
 		self.root = Tk()
-       		self.img_border = PhotoImage(file='/opt/py/icon/icon.png')
-		self.img_inframe = PhotoImage(file='/opt/py/icon/raspberry.png')
+       		self.img_border = PhotoImage(file='/opt/berryradio/icon/icon.png')
+		self.img_inframe = PhotoImage(file='/opt/berryradio/icon/raspberry.png')
 		self.root.tk.call('wm', 'iconphoto', self.root._w, self.img_inframe)
 		self.frequency = frequency
 		self.music = music
