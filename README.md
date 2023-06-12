@@ -1,5 +1,5 @@
 # <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/3/3b/Raspberry_Pi_logo.svg/1200px-Raspberry_Pi_logo.svg.png" width="40" height="50"> BerryRadio 
-petit résumé du projet <a href="https://rqlcs.github.io/src/berryradio.html">ici</a>
+petit résumé du projet <a href="https://rqlcs.github.io/blog/BerryRadio.html">ici</a>
 
 ## -> Téléchargement 
 **Server Side:**
